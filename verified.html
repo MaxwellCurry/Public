@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Verified</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Pastel Crayon';
+      src: url('/js/pastel.ttf') format('truetype');
+    }
+
+    body {
+      font-family: 'Pastel Crayon';
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-color: #ffffff;
+      background-image: url("/images/paper.png");
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 5;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.4);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 400px;
+      border-radius: 10px;
+      text-align: center;
+      align-items: center;
+    }
+
+    .name-inputs {
+      display: flex;
+      gap: 10px;
+    }
+
+    .name-inputs input,
+    .modal-content input,
+    .modal-content button {
+      font-family: 'Pastel Crayon';
+      font-size: 17px;
+      padding: 10px;
+      width: 100%;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      outline: none;
+    }
+
+    .modal-content button {
+      font-size: 20px;
+      background-color: #6495ED;
+      color: white;
+      cursor: pointer;
+    }
+
+    .crush-input-wrapper {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      width: 80%;
+    }
+
+    #submit-button {
+      background-color: #14E66C;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #crush-button {
+      width: 40%;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    h2{
+      font-weight: 599
+    }
+    
+    
+    #crushes-container {
+      transform: translate(10%, 0%);
+    }
+
+    .crush-input-wrapper {
+      width: 77%; /* Adjust this value as needed */
+      display: inline-block;
+      margin-right: 0%; 
+      display: flex;
+      align-items: center;
+    }
+
+    .crush-input-wrapper span {
+      font-size: 19px;
+      color: #333;
+      margin-left: 5px;
+      margin-top: -6px;
+    }
+
+.delete-crush {
+  position: absolute;
+  cursor: pointer;
+  left: -30px;
+  font-size: 20px;
+  color: red;
+  user-select: none;
+}
+
+.delete-crush:hover {
+  color: darkred;
+}
+    
+@keyframes bob {
+  0%, 100% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+#flying-bird {
+  margin-top: -50px;
+  margin-bottom: 0px;
+  cursor: pointer;
+  width: 150px; /* Adjust size as needed */
+  height: auto;
+  animation: bob 2s infinite;
+}
+
+    
+#loading-text {
+  font-family: 'Pastel Crayon';
+  font-size: 30px;
+  text-align: center;
+  margin-top: 15px;
+  color: #333;
+}
+
+@keyframes dots {
+  0%, 20% {
+    content: '.';
+  }
+  40% {
+    content: '..';
+  }
+  60% {
+    content: '...';
+  }
+  80%, 100% {
+    content: '';
+  }
+}
+
+#dots::after {
+  content: '';
+  animation: dots 3s steps(1, end) infinite;
+}
+
+
+  </style>
+  <script src="verified.js" defer type="module"></script>
+</head>
+<body>
+  <img src="/images/flying-bird.png" id="flying-bird" alt="Flying Bird">
+  <div id="loading-text">Loading<span id="dots">...</span></div>
+
+  <div id="create-account-modal" class="modal">
+    <div class="modal-content">
+      <h2>Input Crushes</h2>
+      <div id="name-input-container" class="name-inputs" style="display: none;">
+        <input type="text" id="first-name" placeholder="Your First Name" required>
+        <input type="text" id="last-name" placeholder="Your Last Name" required>
+      </div>
+
+      <input type="text" id="login-email" readonly>
+      <div id="crushes-container">
+        <div class="crush-input-wrapper">
+          <input type="text" class="crush-email" placeholder="Peer's School Email" required>
+          <span class="email-domain"></span>
+        </div>
+      </div>
+      <button type="button" id="crush-button" onclick="addCrush()">Add Crush</button>
+      <button type="button" id="submit-button" onclick="submit()">Submit</button>
+    </div>
+  </div>
+</body>
+</html>

@@ -96,6 +96,12 @@ document.addEventListener("DOMContentLoaded", async function () {
   infoButton.addEventListener("click", function () {
     popupContainer.style.display = popupContainer.style.display === "none" ? "block" : "none";
   });
+  
+  document.getElementById("school-email-input").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      loginUser();
+    }
+  });
 
   const donate = document.getElementById('donate-button');
   donate.addEventListener('click', function() {

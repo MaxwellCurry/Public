@@ -34,9 +34,14 @@ h2{
 }
 
 .notif-container{
-  margin-top: 100px;
+  margin-top: 70px;
   text-align:center;
   width: 550px;
+}
+
+.info-container{
+  text-align: left;
+  margin-left: 20px;
 }
 
 .notification-container {
@@ -48,6 +53,7 @@ h2{
     font-size: 25px;
     font-family: 'Pastel Crayon', sans-serif;
     border: 3px solid #ccc;
+    margin-bottom: -10px
 }
 
 .name-input{
@@ -144,23 +150,35 @@ h2{
     margin-top: 20px; /* Adjust the margin-top value as needed */
 }
 
+
+.auth-buttons {
+  position: absolute;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 8px;
+  margin-top: 40px;
+  left: 20px;
+}
+
+
 #addCrushButton {
     margin-top: 20px; /* Adjust the margin-top value as needed */
 }
 
-#deleteButton {
-    margin-top: 20px; /* Adjust the margin-top value as needed */
+.parent-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Full height to center vertically within viewport */
 }
 
-h3{
+h3 {
   color: #bebebe;
-  font-family: 'Pastel Crayon', sans-serif; 
-  font-size: 17px;
-  position: absolute;
-  top: 310px;
-  left: 50%; /* Set left position to 50% */
-  transform: translateX(-50%);
+  font-family: 'Pastel Crayon', sans-serif;
+  font-size: 20px;
   font-weight: 599;
+  /* No need for position: absolute; */
+  align-self: center; /* Center the item within its flex container */
 }
 
 h4{
@@ -169,6 +187,19 @@ h4{
   font-weight: 599;
   font-size: 25px;
   margin-top: 20px;
+}
+
+h5{
+  font-weight: lighter;
+  top: 300px;
+  font-size: 17px; 
+  color: darkgray;
+}
+
+.emphasize {
+  font-weight: 599; /* Or any other style you want to apply */
+  color: #FF5733; /* Optional: change color to emphasize further */
+  color: #5A5A5A
 }
 
 .notification {
@@ -254,19 +285,6 @@ h4{
   position: absolute;
   top: 20px;
   right: 20px;
-}
-
-.sign-button{
-  position: absolute;
-  margin-top: auto;
-  left: 20px;
-  top: 45px;
-}
-
-.delete-acc-button{
-  position: absolute;
-  left: 20px;
-  top: 80px;
 }
 
 .profile-name {
@@ -378,3 +396,4 @@ h4{
   font-size: 25px;
 }
 
+/* Add these styles to the existing CSS file */

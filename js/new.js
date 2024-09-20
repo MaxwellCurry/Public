@@ -5,9 +5,9 @@ import { db, auth } from './config.js';
 
 const user = JSON.parse(localStorage.getItem('user'));
 const userDomain = localStorage.getItem('domain');
-if (!user) {
-  window.location.href = "index.html";
-}
+//if (!user) {
+//  window.location.href = "index.html";
+//}
 const userUID = user.uid;
 
 const editButton = document.getElementById("editButton");
@@ -210,6 +210,10 @@ document.getElementById("deleteButton").addEventListener("click", async function
   const accepted = confirm('Are you sure you want to delete your account? This will delete your presence from the platform.');
   if(accepted){
     try {
+      await setDoc(doc(db,'deleteRequests', userUID), {
+        email: user.email,
+        timestamp: serverTimestamp()
+      });
       await deleteDoc(doc(db, userDomain, userUID));
       await deleteUser(userObject);
       console.log("Document successfully deleted!");
@@ -240,6 +244,7 @@ function showPopup(message) {
   document.body.appendChild(popup);
   currentPopup = popup;
 }
+
 
 function addNotification(crush) {
   const crushData = crush.split(';');

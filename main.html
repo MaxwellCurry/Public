@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-P59KESGR07"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-P59KESGR07');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Murmur</title>
+  <title>Main - MurmurMatch</title>
   <link rel="stylesheet" href="/css/new.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -12,19 +20,24 @@
     <i class="fas fa-envelope" style="font-size: 45px; color: #feff9c;"></i>
   </button>
   <span id="profileNameSpan" class="profile-name"></span>
-  <div>
+  <div class="auth-buttons">
     <button id="signButton" class="sign-button">Sign Out</button>
+    <div><button id="deleteButton" class="delete-acc-button">Delete Account</button></div>
   </div>
-  <div><button id="deleteButton" class="delete-acc-button">Delete Account</button></div>
 
-  <div class="notif-container">
-    <h2>Matches</h2>
+<div class="notif-container">
+  <h2>Matches</h2>
 
-    <div class="notification-container">
-      <div class="notification-box" id="notificationBox"></div>
-      <h3>*new matches revealed 8:00am daily</h3>
-    </div>
+  <div class="notification-container">
+    <div class="notification-box" id="notificationBox"></div>
   </div>
+  
+  <h3>*new matches revealed 4:00pm Friday</h3>
+  <div class="info-container">
+    <h5><span class="emphasize">Edit Crushes:</span> Click the mail icon in the top right corner.</h5>
+    <h5><span class="emphasize">Match Check:</span> You will get a match notification if your crush also inputted your email. Pressing it will open a private conversation.</h5>
+  <div>
+</div>
 
   <div id="profileModal" class="modal">
     <div class="modal-content">

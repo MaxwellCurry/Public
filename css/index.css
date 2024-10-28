@@ -8,9 +8,8 @@ body {
   font-family: 'Pastel Crayon';
   margin: 0;
   padding: 0;
-  position: relative;
   height: 100vh;
-  background-color: #ffffff;
+  background-color: #f9f9f9;
   background-image: url("/images/paper.png");
   background-size: cover;
   background-repeat: no-repeat;
@@ -18,20 +17,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-}
-
-.popup-container {
-  position: fixed;
-  top: 50%;
-  left: 50.9%;
-  transform: translate(-50%, -50%);
-  background-color: #feff9c;
-  padding: 20px;
-  border-radius: 20px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-  display: none;
-  z-index: 4;
-  font-family: 'Pastel Crayon', sans-serif;
+  position: relative; /* Ensure body is relative for the top buttons */
 }
 
 h2{
@@ -78,23 +64,41 @@ h2{
   color: darkred;
 }
 
-
+.popup-container {
+  position: absolute;
+  width: 90%; /* Set width */
+  max-width: 500px;
+  background-color: #feff9c;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  display: none;
+  z-index: 4;
+  font-family: 'Pastel Crayon', sans-serif;
+  min-height: 100px; /* Set minimum height */
+  max-height: 600px; /* Set maximum height, can adjust based on needs */
+  overflow-y: auto; /* Add scroll if content exceeds max-height */
+  box-sizing: border-box; /* Include padding in width/height calculations */
+}
 
 .popup-container p {
-  max-width: 300px;
+  max-width: 100%; /* Ensure paragraph fits within the container */
   margin-bottom: 15px;
+  word-wrap: break-word;
 }
 
 .popup-text {
   font-size: 30px;
   color: #555555;
+  overflow-wrap: break-word;
+  line-height: 1.2;
 }
 
 .close-popup {
   position: absolute;
   top: 10px;
   right: 10px;
-  font-size: 18px;
+  font-size: 28px;
   color: #666;
   cursor: pointer;
 }
@@ -113,48 +117,54 @@ h2{
   line-height: 43px;
   color: #fff;
   cursor: pointer;
+  margin-right: 20px;
 }
 
 #donate-button:hover {
   transform: translate(0, -3.5%);
 }
 
-#info-button {
+
+.top-buttons-container {
   position: absolute;
-  top: 20px;
-  left: 21px;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px; /* Add some padding for spacing */
+}
+
+#info-button {
   width: 101.5px;
   height: 101.5px;
   background-color: transparent;
   background-image: url('/images/info.png');
   background-size: contain;
   background-repeat: no-repeat;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 43px;
-  font-size: 50px;
-  color: #fff;
   cursor: pointer;
+  margin-left: 20px;
 }
 
 #info-button:hover {
   transform: translate(0, -3.5%);
 }
 
-#logo {
-  margin-top: -150px;
-  max-width: 370px;
-  margin-bottom: 10px;
-  cursor: pointer;
-}
-
 .login-container {
-  position: relative;
   width: 255px;
   padding: 10px;
   border-radius: 10px;
   text-align: center;
-  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Ensures all child elements are centered */
+  justify-content: center; /* Centers content within the container */
+  margin-top: calc(-100vh / 8);
+}
+
+#logo {
+  max-width: 370px;
+  margin-bottom: 20px;
+  margin-left: 10px;
 }
 
 .login-container input {

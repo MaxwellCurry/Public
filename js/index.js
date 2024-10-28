@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   const donate = document.getElementById('donate-button');
   donate.addEventListener('click', function() {
-    window.open("https://github.com/MaxwellCurry/MurmurWebsite", "_blank");
+    window.open("https://github.com/MaxwellFung/MurmurWebsite", "_blank");
   });
 });
 

@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   popupContainer.style.display = "none";
 
   popupText.classList.add("popup-text");
-  popupText.textContent = "Introducing Murmur! Simply input the name and school emails of people you secretly like, and if there's a mutual entry, you'll both get a notification signifying a match! Register with your school email to get started!";
+  popupText.textContent = "Curious if your crush likes you back? Register and input the school emails of your crushes. This notifies them via email that they have a secret admirer. If they enter your email back, a chat will open."
 
   closePopup.classList.add("close-popup");
   closePopup.textContent = "✖";

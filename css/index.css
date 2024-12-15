@@ -158,7 +158,8 @@ h2{
   flex-direction: column;
   align-items: center; /* Ensures all child elements are centered */
   justify-content: center; /* Centers content within the container */
-  margin-top: calc(-100vh / 8);
+  margin-top: calc(-120vh / 8);
+  align-self: center
 }
 
 #logo {

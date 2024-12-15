@@ -3,13 +3,14 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase
 import { getAuth } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCyqYSgE4lza8qMRAgA4QD_ktre6t9BnQc",
+  apiKey: "AIzaSyBMAPoHDy4fwPIMtApwteNqi2gUHaYbFsc",
   authDomain: "murmurwebsite.firebaseapp.com",
+  databaseURL: "https://murmurwebsite-default-rtdb.firebaseio.com",
   projectId: "murmurwebsite",
-  storageBucket: "murmurwebsite.appspot.com",
+  storageBucket: "murmurwebsite.firebasestorage.app",
   messagingSenderId: "499595493997",
-  appId: "1:499595493997:web:5295c99c3e07d9f7dd7564",
-  measurementId: "G-P59KESGR07"
+  appId: "1:499595493997:web:7beb6af48b8621f9dd7564",
+  measurementId: "G-R83FLJ2FN4"
 };
 
 const app = initializeApp(firebaseConfig);

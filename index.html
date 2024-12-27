@@ -58,5 +58,28 @@
       </div>
     </div>
   </div>
+  
+  <footer style="position: absolute; bottom: 20px; width: 100%; text-align: center;">
+    <a href="/privacy.html" style="color: #3EB2E3; text-decoration: underline;">Privacy Policy</a>
+    <span id="user-count" style="margin-left: 10px; color: #3EB2E3;">Loading...</span>
+  </footer>
+
+  <script>
+    // Fetch user count from the cloud function
+    async function fetchUserCount() {
+      try {
+        const response = await fetch("https://us-central1-murmurwebsite.cloudfunctions.net/fetchCounts");
+        const data = await response.json();
+        const userCount = data.user_count || 0; // Default to 0 if no value is present
+        document.getElementById('user-count').textContent = `${userCount} users`;
+      } catch (error) {
+        console.error('Error fetching user count:', error);
+        document.getElementById('user-count').textContent = 'Error loading users';
+      }
+    }
+
+    // Call the function when the page loads
+    fetchUserCount();
+  </script>
 </body>
 </html>
